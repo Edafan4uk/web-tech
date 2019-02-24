@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script> 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../src/index.js"></script>
     <title>Hello</title>
     <style>
         .fakeimg
@@ -15,15 +17,22 @@
             background: #e3f2fd;
 
         }
+        .fakeimg2{
+          height: 500px;
+        }
     </style>
+    
 </head>
 <body>
-        <div class="jumbotron text-center" style="margin-bottom:0;
-        background-color:#e3f2fd">
-          <h1>My First Bootstrap 4 Page</h1>
-          <p>Resize this responsive page to see the effect!</p> 
-        </div>
-        
+      <div class="jumbotron text-center" style="margin-bottom:0;">
+        <h1 class="display-4">Welcome to my website!</h1>
+        <p class="lead">My name is Eduard and I made this website for my university course.</p>
+        <hr class="my-4">
+        <p>I used Bootstrap4 to design this page</p>
+        <a class="btn btn-primary btn-lg" href="https://getbootstrap.com" target="_blank" role="button">Learn more about Bootstrap4</a>
+      </div>
+    
+            
         <nav class="navbar sticky-top navbar-expand-md navbar-light bg-primary">
           <a class="navbar-brand" href="#">Navbar</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -32,71 +41,111 @@
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#AboutMe">About me</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#jsLinks">Links with js</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Dropdown
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#AboutMe">About me</a>
+                  <a class="dropdown-item" href="#jsLinks">Links</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="#someMore">Some more</a>
                 </div>
               </li>
          
             </ul>
-            <form class="form-inline ml-md-auto">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <form action="someRoute" name="searchForm" class="form-inline ml-md-auto">
+                <input class="form-control mr-sm-2" type="search" required placeholder="Search" aria-label="Search">
                 <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
             </form>
           </div>
           
         </nav>
-        <div class="container-fluid" style="margin-top:30px">
-          <div class="row align-items-center justify-content-end">
-            <div class="col-sm-4 col-md order-first">
-              <h2>About Me</h2>
-              <h5>Photo of me:</h5>
-              <div class="fakeimg">Fake Image</div>
-              <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-              <h3>Some Links</h3>
-              <p>Lorem ipsum dolor sit ame.</p>
-              <ul class="nav nav-pills flex-column nav-justified">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-              </ul>
-              <hr>
+        <div class="container" style="margin-top:30px">
+            <h3 class="display-4 text-center">Carousel</h3>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-bottom:3em;">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="../images/ny.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../images/chicago.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../images/la.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
             </div>
-            <div class="col-sm-6 offset-sm-2 col-md">
-              <h2>TITLE HEADING</h2>
-              <h5>Title description, Dec 7, 2017</h5>
-              <div class="fakeimg">Fake Image</div>
-              <p>Some text..</p>
-              <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-              <br>
-              <h2>TITLE HEADING</h2>
-              <h5>Title description, Sep 2, 2017</h5>
-              <div class="fakeimg">Fake Image</div>
-              <p>Some text..</p>
-              <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <h3 class="display-4 text-center">About me and JS links</h3>
+            <div class="row justify-content-around align-items-center" style="margin-bottom:3em;">
+              <div class="col-sm">
+                <div id="AboutMe" class="card text-center">
+                    <img src="../images/me.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">About me</h5>
+                      <p class="card-text">
+                        Гаратаю класні, суперові і люксові сайти, які вміют класно адаптуватисі як мій друг 
+                        <span class="font-weight-bold">саня</span> на науковій.
+                      </p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div id="jsLinks">
+                  <h3 class="display-6 text-center">JS links</h3>
+                  <ul class="nav nav-pills flex-column nav-justified">
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li> -->
+                  </ul>
+                  <hr>
+                </div>
+              </div>
+          </div>
+          <h4 id="someMore" class="display-4 text-center">Some more</h4>
+          <div class="row align-items-center justify-content-between" style="margin-bottom:10px;">
+            
+            <div class="col-md-5">
+                <div class="card">
+                    <img src="../images/ny.jpg" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                      <p class="card-text">
+                        That is some random picture from NY
+                      </p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-first col-md-5">
+                <div class="card" >
+                    <img src="../images/la.jpg" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                      <p class="card-text">
+                        That is some random picture from LA
+                      </p>
+                    </div>
+                </div>
             </div>
           </div>
         </div>
