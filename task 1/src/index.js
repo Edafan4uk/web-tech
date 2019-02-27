@@ -6,13 +6,11 @@ function handler(e){
     document.getElementById("jsLinks").addEventListener("click",handlerLinks,false);
 }
 function handlerSearch(e){
-    console.log("hello");
+    alert("hello");
     return e.preventDefault();
 }
 function handlerLinksLoad(){
     let ul = document.getElementById("jsLinks").children[1];
-    console.log("hui")
-
     for (let index = 0; index < 4; index++) {
         let li = document.createElement("li");
         li.setAttribute("class","nav-item");
@@ -21,13 +19,10 @@ function handlerLinksLoad(){
         a.setAttribute("href","#");
         a.innerHTML = "Link"
         li.appendChild(a);
-        console.log(a);
-        console.log(li);
         ul.appendChild(li);
     }
 }
 function handlerLinks(e){
-    console.log(e.target.tagName);
     if(e.target.tagName!="A"&&e.target.tagName!="H3")
         return;
     for (let index = 0; index < e.currentTarget.children[1].children.length; index++) {
@@ -38,8 +33,7 @@ function handlerLinks(e){
     }
     if(e.target.tagName=="A"){
         e.target.setAttribute("class","nav-link active");
-        e.target.innerHTML = "Active";
-        
+        e.target.innerHTML = "Active";        
     }
     return e.preventDefault();
 }
